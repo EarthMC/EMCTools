@@ -1,0 +1,21 @@
+name: EMCTools
+version: 1.1.0
+api-version: 1.13
+author: Karl Essinger (KarlofDuty)
+website: http://karlofduty.com
+load: STARTUP
+main: com.karlofduty.EMCTools.EMCTools
+permissions:
+  emc.joinqueue:
+    description: Lets a player join the bungeecord queue.
+    default: op
+  emc.saferestart:
+    description: Lets a player restart the server.
+    default: op
+commands:
+  joinqueue:
+    description: Joins the queue to a server.
+    usage: /joinqueue <server name>
+  saferestart:
+    description: Safely restarts the server.
+    usage: /saferestart
