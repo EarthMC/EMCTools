@@ -1,5 +1,5 @@
 name: EMCTools
-version: 1.1.0
+version: 1.1.2
 api-version: 1.13
 author: Karl Essinger (KarlofDuty)
 website: http://karlofduty.com
@@ -12,6 +12,12 @@ permissions:
   emc.saferestart:
     description: Lets a player restart the server.
     default: op
+  emc.vote:
+    description: Lets a player use /vote.
+    default: op
+  emc.discord:
+    description: Lets a player use /discord.
+    default: op
 commands:
   joinqueue:
     description: Joins the queue to a server.
@@ -19,3 +25,9 @@ commands:
   saferestart:
     description: Safely restarts the server.
     usage: /saferestart
+  vote:
+    description: Displays links to voting sites.
+    usage: /vote
+  discord:
+    description: Displays an invite link to the Discord server.
+    usage: /discord
