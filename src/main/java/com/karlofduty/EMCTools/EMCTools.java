@@ -1,9 +1,9 @@
 package com.karlofduty.EMCTools;
 
-import com.karlofduty.EMCTools.commands.DiscordCommand;
 import com.karlofduty.EMCTools.commands.JoinQueueCommand;
-import com.karlofduty.EMCTools.commands.SafeRestartCommand;
-import com.karlofduty.EMCTools.commands.VoteCommand;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class EMCTools extends JavaPlugin
@@ -14,17 +14,18 @@ public class EMCTools extends JavaPlugin
     public void onEnable()
     {
         instance = this;
-        EMCTools.executeCommand("whitelist on");
         getServer().getMessenger().registerOutgoingPluginChannel(this, "queue:join");
         this.getCommand("joinqueue").setExecutor(new JoinQueueCommand());
-        this.getCommand("saferestart").setExecutor(new SafeRestartCommand());
-        this.getCommand("vote").setExecutor(new VoteCommand());
-        this.getCommand("discord").setExecutor(new DiscordCommand());
+        this.getCommand("beta").setExecutor(new BetaCommand());
+    }
 
-        getServer().getScheduler().scheduleSyncDelayedTask(this, () ->
+    private class BetaCommand implements CommandExecutor
+    {
+        @Override
+        public boolean onCommand(CommandSender sender, Command command, String label, String[] args)
         {
-            EMCTools.executeCommand("whitelist off");
-        }, 200);
+            return getServer().dispatchCommand(sender, "joinqueue beta");
+        }
     }
 
     public static boolean executeCommand(String command)

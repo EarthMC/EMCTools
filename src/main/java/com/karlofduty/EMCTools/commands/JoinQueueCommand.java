@@ -3,6 +3,7 @@ package com.karlofduty.EMCTools.commands;
 import com.google.common.io.ByteArrayDataOutput;
 import com.google.common.io.ByteStreams;
 import com.karlofduty.EMCTools.EMCTools;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -33,7 +34,16 @@ public class JoinQueueCommand implements CommandExecutor
         }
         else
         {
-            sender.sendMessage("§CYou do not have permission to do that.");
+            if("beta".equals(args[0]))
+            {
+                sender.sendMessage(ChatColor.LIGHT_PURPLE + "The beta server is only available to players with Premium. " +
+                        "Most of the beta features will be available for the public after the beta has ended. " +
+                        "If you don't want to wait you can purchase it by clicking here: https://store.earthmc.net/premium");
+            }
+            else
+            {
+                sender.sendMessage("§CYou do not have permission to do that.");
+            }
         }
         return true;
     }
@@ -46,3 +56,4 @@ public class JoinQueueCommand implements CommandExecutor
         player.sendPluginMessage(EMCTools.instance, "queue:join", out.toByteArray());
     }
 }
+

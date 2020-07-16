@@ -1,33 +1,19 @@
 name: EMCTools
-version: 1.1.2
-api-version: 1.13
+version: ${project.version}
+description: ${project.description}
+api-version: '1.13'
 author: Karl Essinger (KarlofDuty)
 website: http://karlofduty.com
-load: STARTUP
+load: POSTWORLD
 main: com.karlofduty.EMCTools.EMCTools
 permissions:
   emc.joinqueue:
     description: Lets a player join the bungeecord queue.
     default: op
-  emc.saferestart:
-    description: Lets a player restart the server.
-    default: op
-  emc.vote:
-    description: Lets a player use /vote.
-    default: op
-  emc.discord:
-    description: Lets a player use /discord.
-    default: op
 commands:
   joinqueue:
     description: Joins the queue to a server.
     usage: /joinqueue <server name>
-  saferestart:
-    description: Safely restarts the server.
-    usage: /saferestart
-  vote:
-    description: Displays links to voting sites.
-    usage: /vote
-  discord:
-    description: Displays an invite link to the Discord server.
-    usage: /discord
+  beta:
+    description: Joins the beta server.
+    usage: /beta
