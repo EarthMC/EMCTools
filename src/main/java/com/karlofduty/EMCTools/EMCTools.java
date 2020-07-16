@@ -1,6 +1,7 @@
 package com.karlofduty.EMCTools;
 
 import com.karlofduty.EMCTools.commands.JoinQueueCommand;
+import com.karlofduty.EMCTools.commands.PremiumCommand;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -17,6 +18,8 @@ public class EMCTools extends JavaPlugin
         getServer().getMessenger().registerOutgoingPluginChannel(this, "queue:join");
         this.getCommand("joinqueue").setExecutor(new JoinQueueCommand());
         this.getCommand("beta").setExecutor(new BetaCommand());
+        this.getCommand("art").setExecutor(new ArtCommand());
+        this.getCommand("premium").setExecutor(new PremiumCommand());
     }
 
     private class BetaCommand implements CommandExecutor
@@ -25,6 +28,15 @@ public class EMCTools extends JavaPlugin
         public boolean onCommand(CommandSender sender, Command command, String label, String[] args)
         {
             return getServer().dispatchCommand(sender, "joinqueue beta");
+        }
+    }
+
+    private class ArtCommand implements CommandExecutor
+    {
+        @Override
+        public boolean onCommand(CommandSender sender, Command command, String label, String[] args)
+        {
+            return getServer().dispatchCommand(sender, "joinqueue art");
         }
     }
 

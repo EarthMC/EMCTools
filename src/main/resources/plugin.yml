@@ -17,3 +17,9 @@ commands:
   beta:
     description: Joins the beta server.
     usage: /beta
+  art:
+    description: Joins the art server.
+    usage: /art
+  premium:
+    description: Shows premium information.
+    usage: /premium
