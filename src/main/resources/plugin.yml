@@ -2,7 +2,7 @@ name: EMCTools
 version: ${project.version}
 description: ${project.description}
 api-version: '1.13'
-author: Karl Essinger (KarlofDuty)
+author: creatorfromhell, KarlofDuty
 website: http://karlofduty.com
 load: POSTWORLD
 main: com.karlofduty.EMCTools.EMCTools
