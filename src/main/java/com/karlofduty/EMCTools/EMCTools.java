@@ -2,6 +2,7 @@ package com.karlofduty.EMCTools;
 
 import com.karlofduty.EMCTools.commands.JoinQueueCommand;
 import com.karlofduty.EMCTools.commands.PremiumCommand;
+import com.karlofduty.EMCTools.commands.StoreCommand;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -20,6 +21,7 @@ public class EMCTools extends JavaPlugin
         this.getCommand("beta").setExecutor(new BetaCommand());
         this.getCommand("art").setExecutor(new ArtCommand());
         this.getCommand("premium").setExecutor(new PremiumCommand());
+        this.getCommand("store").setExecutor(new StoreCommand());
     }
 
     private class BetaCommand implements CommandExecutor
