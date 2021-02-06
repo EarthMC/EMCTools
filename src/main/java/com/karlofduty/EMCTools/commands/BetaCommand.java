@@ -46,7 +46,7 @@ public class BetaCommand implements CommandExecutor, TabCompleter
 
         EMCTools.awaitingBetaConfirmation.put(player.getUniqueId(), (System.currentTimeMillis() + 20 * 1000));
         sender.spigot().sendMessage(new TextComponent(ChatColor.GREEN + "Run the /beta command again to be sent to the beta server."));
-        sender.spigot().sendMessage(new TextComponent(ChatColor.GREEN + "You will be sent to the beta server. Use the /towny command to re-queue for Towny."));
+        sender.spigot().sendMessage(new TextComponent(ChatColor.GREEN + "You will be sent to the beta server. Use /joinqueue towny to re-queue for Towny."));
         return true;
     }
 }
