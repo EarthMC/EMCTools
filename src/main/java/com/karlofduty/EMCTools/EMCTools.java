@@ -10,9 +10,6 @@ import com.karlofduty.EMCTools.commands.JoinQueueCommand;
 import com.karlofduty.EMCTools.commands.PremiumCommand;
 
 import org.bukkit.Bukkit;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
-import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import net.md_5.bungee.api.ChatColor;
@@ -31,7 +28,6 @@ public class EMCTools extends JavaPlugin
         this.getCommand("joinqueue").setExecutor(new JoinQueueCommand());
         this.getCommand("beta").setExecutor(new BetaCommand());
         this.getCommand("premium").setExecutor(new PremiumCommand());
-        this.getCommand("towny").setExecutor(new TownyCommand());
 
         Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, () ->
         {
@@ -45,13 +41,6 @@ public class EMCTools extends JavaPlugin
         }, 100, 100);
     }
 
-    private class TownyCommand implements CommandExecutor
-    {
-        public boolean onCommand(CommandSender sender, Command command, String label, String[] args)
-        {
-            return getServer().dispatchCommand(sender, "joinqueue towny");
-        }
-    }
     public static boolean executeCommand(String command)
     {
         return instance.getServer().dispatchCommand(instance.getServer().getConsoleSender(), command);

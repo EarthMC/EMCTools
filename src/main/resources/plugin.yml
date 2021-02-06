@@ -20,6 +20,3 @@ commands:
   premium:
     description: Shows premium information.
     usage: /premium
-  towny:
-    description: Joins the towny server.
-    usage: /towny
