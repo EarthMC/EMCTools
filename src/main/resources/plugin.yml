@@ -20,3 +20,5 @@ commands:
   premium:
     description: Shows premium information.
     usage: /premium
+  map:
+    description: Sends a clickable message that opens the map.
