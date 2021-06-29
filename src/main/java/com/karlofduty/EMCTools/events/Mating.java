@@ -83,7 +83,7 @@ public final class Mating implements Listener {
     private void triggerSex(Player player) {
         player.sendActionBar(color("&dHave a wonderful time <3"));
         player.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 20*10, 0, true, true));
-        player.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 20*10, 0, true, true));
+        player.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 20*10, 9, true, true));
     }
 
 }
