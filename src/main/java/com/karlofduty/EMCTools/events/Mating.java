@@ -5,6 +5,7 @@ import org.bukkit.event.player.PlayerItemConsumeEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import com.karlofduty.EMCTools.EMCTools;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.Bukkit;
