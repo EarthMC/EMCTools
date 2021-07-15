@@ -7,6 +7,7 @@ import java.util.Map.Entry;
 
 import com.karlofduty.EMCTools.commands.BetaCommand;
 import com.karlofduty.EMCTools.commands.JoinQueueCommand;
+import com.karlofduty.EMCTools.commands.CalcCommand;
 import com.karlofduty.EMCTools.commands.PremiumCommand;
 
 import org.bukkit.Bukkit;
@@ -28,6 +29,7 @@ public class EMCTools extends JavaPlugin
         this.getCommand("joinqueue").setExecutor(new JoinQueueCommand());
         this.getCommand("beta").setExecutor(new BetaCommand());
         this.getCommand("premium").setExecutor(new PremiumCommand());
+        this.getCommand("calculate").setExecutor(new CalcCommand());
 
         Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, () ->
         {
