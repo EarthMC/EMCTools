@@ -20,3 +20,6 @@ commands:
   premium:
     description: Shows premium information.
     usage: /premium
+  calculate:
+    description: Calculates an approx. value of container. (July 2021 economy)
+    usage: /calculate
