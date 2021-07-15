@@ -40,7 +40,7 @@ public class CalcCommand implements CommandExecutor
 			float sum = 0;
 			Chest chestblock = (Chest) block;
 			Inventory inv = chestblock.getBlockInventory();
-			sum += inv.all(Material.GOLDEN_INGOT).size();
+			sum += inv.all(Material.GOLD_INGOT).size();
 			sum += inv.all(Material.GOLD_BLOCK).size() * 9;
 			sum += inv.all(Material.BEACON).size() * 60;
 			sum += inv.all(Material.GOLDEN_APPLE).size() * 8;
@@ -55,14 +55,14 @@ public class CalcCommand implements CommandExecutor
 			sum += inv.all(Material.ENCHANTED_GOLDEN_APPLE).size() * 576;
 			sum += inv.all(Material.TURTLE_HELMET).size() * 8;
 			sum += inv.all(Material.BELL).size() * 54;
-			sum += inv.all(Material.DRAGON_SKULL).size() * 800;
+			sum += inv.all(Material.DRAGON_HEAD).size() * 800;
 			sum += inv.all(Material.NETHERITE_HELMET).size() * 10;
 			sum += inv.all(Material.NETHERITE_CHESTPLATE).size() * 10;
 			sum += inv.all(Material.NETHERITE_LEGGINGS).size() * 10;
 			sum += inv.all(Material.NETHERITE_BOOTS).size() * 10;
 			for (ItemStack item : inv.getContents())
 			{
-				if (item.hasEnchant(Enchantment.MENDING)) sum += 35;
+				if (item.containsEnchantment(Enchantment.MENDING)) sum += 35;
 				if (item.getEnchantmentLevel(Enchantment.PROTECTION_EXPLOSIONS) == 5) sum += 310;
 				if (item.getEnchantmentLevel(Enchantment.THORNS) == 5) sum += 1152;
 				if (item.getItemMeta() instanceof EnchantmentStorageMeta) 
