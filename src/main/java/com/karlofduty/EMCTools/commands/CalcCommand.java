@@ -1,11 +1,11 @@
 package com.karlofduty.EMCTools.commands;
 
+import com.palmergames.bukkit.towny.object.TownyPermission;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import com.palmergames.bukkit.towny.utils.PlayerCacheUtil;
-import com.palmergames.bukkit.towny.object.TownyPermission.ActionType;
 import org.bukkit.block.Block;
 import org.bukkit.Material;
 import org.bukkit.inventory.Inventory;
@@ -14,8 +14,6 @@ import org.bukkit.block.Chest;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.meta.EnchantmentStorageMeta;
-
-import static net.md_5.bungee.api.ChatColor.*;
 
 public class CalcCommand implements CommandExecutor
 {
@@ -30,6 +28,7 @@ public class CalcCommand implements CommandExecutor
 		
 		Player player = (Player) sender;
 		Block block = player.getTargetBlock(4);
+		if (block == null) return true;
 		if (!PlayerCacheUtil.getCachePermission(player, block.getLocation(), block.getType(), TownyPermission.ActionType.SWITCH))
 		{
 			sender.sendMessage("§CCannot use this command without permission.");
@@ -62,6 +61,7 @@ public class CalcCommand implements CommandExecutor
 			sum += inv.all(Material.NETHERITE_BOOTS).size() * 10;
 			for (ItemStack item : inv.getContents())
 			{
+				if (item == null) continue;
 				if (item.containsEnchantment(Enchantment.MENDING)) sum += 35;
 				if (item.getEnchantmentLevel(Enchantment.PROTECTION_EXPLOSIONS) == 5) sum += 310;
 				if (item.getEnchantmentLevel(Enchantment.THORNS) == 5) sum += 1152;
@@ -78,7 +78,5 @@ public class CalcCommand implements CommandExecutor
 			sender.sendMessage("§CTarget any container to process.");
 			return true;
 		}
-	
-		return true;
 	}
 }
