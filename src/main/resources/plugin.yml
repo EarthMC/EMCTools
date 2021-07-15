@@ -6,6 +6,8 @@ author: creatorfromhell, KarlofDuty
 website: http://karlofduty.com
 load: POSTWORLD
 main: com.karlofduty.EMCTools.EMCTools
+depend:
+  - Towny
 permissions:
   emc.joinqueue:
     description: Lets a player join the bungeecord queue.
