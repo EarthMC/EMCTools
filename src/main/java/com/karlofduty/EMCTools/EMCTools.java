@@ -39,4 +39,9 @@ public class EMCTools extends JavaPlugin {
             }
         }, 100, 100);
     }
+
+    @Override
+    public void onDisable() {
+        getServer().getMessenger().unregisterOutgoingPluginChannel(this);
+    }
 }
