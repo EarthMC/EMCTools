@@ -22,3 +22,6 @@ commands:
     usage: /premium
   map:
     description: Sends a clickable message that opens the map.
+  docs:
+    description: Sends the user a link for the earthmc docs.
+    usage: /docs
