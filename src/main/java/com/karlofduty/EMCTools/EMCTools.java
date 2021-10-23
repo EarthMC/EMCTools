@@ -6,6 +6,7 @@ import java.util.UUID;
 import java.util.Map.Entry;
 
 import com.karlofduty.EMCTools.commands.BetaCommand;
+import com.karlofduty.EMCTools.commands.DocsCommand;
 import com.karlofduty.EMCTools.commands.JoinQueueCommand;
 import com.karlofduty.EMCTools.commands.MapCommand;
 import com.karlofduty.EMCTools.commands.PremiumCommand;
@@ -27,6 +28,7 @@ public class EMCTools extends JavaPlugin {
         getCommand("beta").setExecutor(new BetaCommand());
         getCommand("premium").setExecutor(new PremiumCommand());
         getCommand("map").setExecutor(new MapCommand());
+        getCommand("docs").setExecutor(new DocsCommand());
 
         Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, () ->
         {
