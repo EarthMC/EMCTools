@@ -11,7 +11,7 @@ public class DocsCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-        sender.sendMessage(Component.text("Click here for a link to the online docs.").clickEvent(ClickEvent.openUrl("https://earthmc.net/docs/")));
+        sender.sendMessage(Component.text("Click here for a link to the online docs.").color(NamedTextColor.GREEN).clickEvent(ClickEvent.openUrl("https://earthmc.net/docs/")).hoverEvent(HoverEvent.showText(Component.text("Click me to open!").color(NamedTextColor.GREEN))));
         return true;
     }
 }
