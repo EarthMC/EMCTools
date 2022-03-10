@@ -15,11 +15,11 @@ public class PremiumCommand implements CommandExecutor
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args)
 	{
 		String message = "Click here to find out more about EarthMC premium!";
-		if(sender.hasPermission("group.premium"))
+		if (sender.hasPermission("group.premium"))
 			message = "Wow, thanks for supporting the server with your Premium subscription! You are amazing!";
 		
-		TextComponent premiumComponent = Component.text(message).color(NamedTextColor.LIGHT_PURPLE)
-			.hoverEvent(HoverEvent.showText(Component.text("Open EarthMC.net Premium information.").color(NamedTextColor.DARK_PURPLE)))
+		TextComponent premiumComponent = Component.text(message, NamedTextColor.LIGHT_PURPLE)
+			.hoverEvent(HoverEvent.showText(Component.text("Open EarthMC.net Premium information.", NamedTextColor.DARK_PURPLE)))
 			.clickEvent(ClickEvent.openUrl("https://store.earthmc.net/premiumcommand"));
 
 		sender.sendMessage(premiumComponent);
