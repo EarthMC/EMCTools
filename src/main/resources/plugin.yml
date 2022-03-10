@@ -25,3 +25,6 @@ commands:
   docs:
     description: Sends the user a link for the earthmc docs.
     usage: /docs
+  support:
+    description: Sends the user a link for the earthmc support discord.
+    usage: /support

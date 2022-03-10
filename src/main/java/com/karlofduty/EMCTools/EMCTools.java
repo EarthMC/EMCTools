@@ -10,6 +10,7 @@ import com.karlofduty.EMCTools.commands.DocsCommand;
 import com.karlofduty.EMCTools.commands.JoinQueueCommand;
 import com.karlofduty.EMCTools.commands.MapCommand;
 import com.karlofduty.EMCTools.commands.PremiumCommand;
+import com.karlofduty.EMCTools.commands.SupportCommand;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
@@ -29,6 +30,7 @@ public class EMCTools extends JavaPlugin {
         getCommand("premium").setExecutor(new PremiumCommand());
         getCommand("map").setExecutor(new MapCommand());
         getCommand("docs").setExecutor(new DocsCommand());
+        getCommand("support").setExecutor(new SupportCommand());
 
         Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, () ->
         {
