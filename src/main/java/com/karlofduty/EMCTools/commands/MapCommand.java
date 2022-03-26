@@ -28,7 +28,7 @@ public class MapCommand implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
         if (sender instanceof Player player && player.getWorld().getEnvironment().equals(World.Environment.NORMAL)) {
-            sender.sendMessage(mapMessage.clickEvent(ClickEvent.openUrl("https://earthmc.net/map/?worldname=earth&mapname=flat&x=" + player.getLocation().getBlockX() + "&z=" + player.getLocation().getBlockZ())));
+            sender.sendMessage(mapMessage.clickEvent(ClickEvent.openUrl("https://earthmc.net/map/?worldname=earth&mapname=flat&zoom=5&x=" + player.getLocation().getBlockX() + "&z=" + player.getLocation().getBlockZ())));
         } else
             sender.sendMessage(mapMessage);
 
