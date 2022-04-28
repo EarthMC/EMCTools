@@ -18,7 +18,8 @@ import java.util.List;
 
 public class MapCommand implements CommandExecutor, TabCompleter {
 
-    private final TextComponent mapMessage = Component.text("Click here to open the EarthMC map in your browser.", NamedTextColor.GREEN).clickEvent(ClickEvent.openUrl("https://earthmc.net/map/")).hoverEvent(HoverEvent.showText(Component.text("Click me to open!", NamedTextColor.GREEN)));
+    private final String serverName = System.getProperty("name", "unknown").toLowerCase();
+    private final TextComponent mapMessage = Component.text("Click here to open the EarthMC map in your browser.", NamedTextColor.GREEN).clickEvent(ClickEvent.openUrl("https://earthmc.net/map/" + serverName + "/")).hoverEvent(HoverEvent.showText(Component.text("Click me to open!", NamedTextColor.GREEN)));
 
     @Override
     public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
@@ -28,7 +29,7 @@ public class MapCommand implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
         if (sender instanceof Player player && player.getWorld().getEnvironment().equals(World.Environment.NORMAL)) {
-            sender.sendMessage(mapMessage.clickEvent(ClickEvent.openUrl("https://earthmc.net/map/?worldname=earth&mapname=flat&zoom=5&x=" + player.getLocation().getBlockX() + "&z=" + player.getLocation().getBlockZ())));
+            sender.sendMessage(mapMessage.clickEvent(ClickEvent.openUrl("https://earthmc.net/map/" + serverName + "/?worldname=earth&mapname=flat&zoom=5&x=" + player.getLocation().getBlockX() + "&z=" + player.getLocation().getBlockZ())));
         } else
             sender.sendMessage(mapMessage);
 
