@@ -4,6 +4,7 @@ import com.karlofduty.EMCTools.commands.DocsCommand;
 import com.karlofduty.EMCTools.commands.MapCommand;
 import com.karlofduty.EMCTools.commands.PremiumCommand;
 import com.karlofduty.EMCTools.commands.SupportCommand;
+import com.karlofduty.EMCTools.commands.WikiCommand;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -17,5 +18,6 @@ public class EMCTools extends JavaPlugin {
         getCommand("map").setExecutor(new MapCommand());
         getCommand("docs").setExecutor(new DocsCommand());
         getCommand("support").setExecutor(new SupportCommand());
+        getCommand("wiki").setExecutor(new WikiCommand());
     }
 }
