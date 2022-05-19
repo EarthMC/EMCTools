@@ -1,6 +1,7 @@
 package com.karlofduty.EMCTools;
 
 import com.karlofduty.EMCTools.commands.ComponentCommand;
+import com.karlofduty.EMCTools.commands.HubCommand;
 import com.karlofduty.EMCTools.commands.MapCommand;
 import com.karlofduty.EMCTools.commands.PremiumCommand;
 
@@ -21,6 +22,7 @@ public class EMCTools extends JavaPlugin {
         getCommand("docs").setExecutor(new ComponentCommand(clickableMessage("online docs", "https://earthmc.net/docs/")));
         getCommand("support").setExecutor(new ComponentCommand(clickableMessage("support Discord", "https://discord.gg/EZBYmpp")));
         getCommand("wiki").setExecutor(new ComponentCommand(clickableMessage("online wiki", "https://wiki.earthmc.net/")));
+        getCommand("hub").setExecutor(new HubCommand(this));
     }
 
     private Component clickableMessage(String description, String url) {

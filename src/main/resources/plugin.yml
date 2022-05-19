@@ -21,3 +21,7 @@ commands:
   wiki:
     description: Sends the user a link for the earthmc wiki.
     usage: /wiki
+  hub:
+    description: Sends the player to hub.
+    usage: /hub
+    permission: emctools.command.hub
