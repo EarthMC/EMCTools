@@ -3,9 +3,11 @@ version: ${project.version}
 description: ${project.description}
 api-version: '1.16'
 author: creatorfromhell, KarlofDuty
-website: http://karlofduty.com
+website: https://karlofduty.com
 load: POSTWORLD
 main: com.karlofduty.EMCTools.EMCTools
+folia-supported: true
+
 commands:
   premium:
     description: Shows premium information.
